@@ -12,6 +12,11 @@ public class MyDbContext : DbContext
         optionsBuilder.UseSqlServer(connectionString);
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Student>().HasOne(s => s.Course).WithMany().IsRequired();
+    }
+
     public class Student
     {
         public int Id { get; set; }
