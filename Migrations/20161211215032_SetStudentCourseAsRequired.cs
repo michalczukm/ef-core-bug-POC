@@ -15,7 +15,9 @@ namespace efcorepoc.Migrations
             migrationBuilder.AlterColumn<int>(
                 name: "CourseId",
                 table: "Students",
-                nullable: false);
+                nullable: false,
+                oldClrType: typeof(int),
+                oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Students_Courses_CourseId",
@@ -35,7 +37,8 @@ namespace efcorepoc.Migrations
             migrationBuilder.AlterColumn<int>(
                 name: "CourseId",
                 table: "Students",
-                nullable: true);
+                nullable: true,
+                oldClrType: typeof(int));
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Students_Courses_CourseId",
