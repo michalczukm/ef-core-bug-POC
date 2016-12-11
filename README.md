@@ -3,6 +3,18 @@ My proof of concept for Entity Framework Core Tools or Designer bug.
 
 [My question on StackOverflow](http://stackoverflow.com/questions/40667605/altering-column-with-index-on-it-in-entity-framework-core)
 
+## FIX - update
+This is fixed in EF Core 1.1.0 version.
+But - during updating to EF Core 1.1.0 you have to add to `project.json` in tools node `"Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final"`
+
+So the final code in `projetc.json`:
+```
+  "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final"
+  },
+```
+
 ## Bug details
 I've changed the existing column, which had index on it created few migrations earlier:
 
